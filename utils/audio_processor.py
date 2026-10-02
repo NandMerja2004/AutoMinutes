@@ -19,7 +19,8 @@ def download_youtube_audio(url:str) -> str:
         }
     ],
 
-    "quiet": True,
+    "quiet": False,
+    "verbose":True
 }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
