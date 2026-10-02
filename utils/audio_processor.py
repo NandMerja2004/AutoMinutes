@@ -11,7 +11,7 @@ os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 BGUTIL_DIR = "/tmp/bgutil-ytdlp-pot-provider"
 BGUTIL_SERVER = os.path.join(BGUTIL_DIR, "server")
-BGUTIL_ZIP = "/tmp/bgutil-1.3.1.zip"
+BGUTIL_ZIP = "/tmp/bgutil-1.3.2.zip"
 
 
 def setup_bgutil_provider():
@@ -29,7 +29,7 @@ def setup_bgutil_provider():
 
     zip_url = (
         "https://github.com/Brainicism/"
-        "bgutil-ytdlp-pot-provider/archive/refs/tags/1.3.1.zip"
+        "bgutil-ytdlp-pot-provider/archive/refs/tags/1.3.2.zip"
     )
 
     urllib.request.urlretrieve(zip_url, BGUTIL_ZIP)
@@ -37,7 +37,7 @@ def setup_bgutil_provider():
     with zipfile.ZipFile(BGUTIL_ZIP, "r") as zip_ref:
         zip_ref.extractall("/tmp")
 
-    extracted_dir = "/tmp/bgutil-ytdlp-pot-provider-1.3.1"
+    extracted_dir = "/tmp/bgutil-ytdlp-pot-provider-1.3.2"
     shutil.move(extracted_dir, BGUTIL_DIR)
 
     subprocess.run(
