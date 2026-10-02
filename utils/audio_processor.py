@@ -10,6 +10,11 @@ def download_youtube_audio(url:str) -> str:
     ydl_opts = {
     "format": "bestaudio/best",
     "outtmpl": output_path,
+    "extractor_args": {
+    "youtube": {
+        "player_client": ["web_embedded"]
+    }
+},
 
     "postprocessors": [
         {
