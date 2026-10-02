@@ -308,17 +308,6 @@ st.session_state.setdefault("messages", [])
 st.session_state.setdefault("took", 0)
 st.session_state.setdefault("aid", "x")
 
-@st.cache_resource
-def _preload():
-    def run():
-        try:
-            import main  # noqa: F401
-        except Exception:
-            pass
-    threading.Thread(target=run, daemon=True).start()
-    return True
-
-_preload()
 
 STAGES = [("Prepare audio", 0), ("Transcribe", 15), ("Summarise", 62), ("Action items", 76),
           ("Key decisions", 84), ("Open questions", 91), ("Chat index", 96)]
